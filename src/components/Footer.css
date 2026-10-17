@@ -21,21 +21,42 @@
 
 .footer-icons {
   display: flex;
-  gap: 2.8rem;
+  gap: 1.6rem;
   margin-right: 3.5rem;
 }
+
 .footer-icons a {
+  position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   color: var(--text);
-  transition: color 0.2s, transform 0.2s;
 }
 
-.footer-icons a:hover {
-  color: var(--highlight);
-  transform: translateY(-2px);
+/* the blurred circle behind the icon */
+.footer-icons a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .footer-icons svg {
+  position: relative;
   width: 22px;
   height: 22px;
   fill: currentColor;
@@ -47,7 +68,7 @@
   }
 
   .footer-icons {
-    gap: 2rem;
+    gap: 1.2rem;
     margin-right: 4rem;
   }
 }
