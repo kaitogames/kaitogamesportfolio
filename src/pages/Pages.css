@@ -1,0 +1,88 @@
+.portfolio-page,
+.project-page,
+.contact-page {
+  padding-top: 8rem;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--highlight);
+  margin-bottom: 1rem;
+}
+
+.category-block {
+  margin-bottom: 3rem;
+}
+
+.category-heading {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--highlight);
+  margin: 2rem 0 1.5rem;
+}
+
+/* Project page */
+.back-link {
+  display: inline-block;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--highlight);
+}
+
+.project-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.project-tagline {
+  color: var(--muted);
+  margin: 0.4rem 0 2rem;
+}
+
+.project-hero-image {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  display: block;
+  background: #141414;
+}
+
+.project-description {
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+/* Contact page */
+.contact-page {
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.contact-email-text {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.contact-email {
+  color: var(--highlight);
+  font-size: 1.2rem;
+  font-weight: 600;
+  word-break: break-all;
+  transition: opacity 0.2s;
+}
+
+.contact-email:hover {
+  opacity: 0.8;
+}
