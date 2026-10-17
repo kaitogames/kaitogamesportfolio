@@ -7,7 +7,7 @@ const categories = [...new Set(projects.map((p) => p.category))];
 function PortfolioPage() {
   return (
     <section className="portfolio-page">
-      <h1 className="page-heading">Portfolio</h1>
+      <h1 className="page-heading">Projects</h1>
 
       {categories.map((cat) => (
         <div key={cat} className="category-block">

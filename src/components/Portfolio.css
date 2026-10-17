@@ -1,10 +1,11 @@
+/* ---------- heading ---------- */
 .portfolio-heading {
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--highlight);
-  margin-bottom: 2.5rem;
+  text-align: left;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
 }
-
+/* ---------- project cards (used on the Projects page) ---------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -53,13 +54,155 @@
   font-size: 0.95rem;
 }
 
-.portfolio-more {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-
 @media (max-width: 800px) {
   .project-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- home page slider ---------- */
+.feature {
+  padding: 2.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0;
+}
+
+.feature-slide {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 2.5rem;
+  align-items: center;
+  animation: featureFade 0.5s ease;
+}
+
+@keyframes featureFade {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-title {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.feature-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.feature-image-wrap {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.feature-image {
+  aspect-ratio: 16 / 10;
+  background-color: #141414;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.feature-slide:hover .feature-image {
+  transform: scale(1.04);
+}
+
+/* bottom row: lines up with the image column */
+.feature-bar {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 2.5rem;
+  margin-top: 1.4rem;
+}
+
+.feature-bar-inner {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature-controls > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.feature-controls > button:hover {
+  color: #fff;
+}
+
+.feature-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+.feature-more {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.25s;
+}
+
+.feature-more:hover {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .feature {
+    padding: 1.4rem;
+  }
+
+  .feature-slide,
+  .feature-bar {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-bar-inner {
+    grid-column: 1;
   }
 }

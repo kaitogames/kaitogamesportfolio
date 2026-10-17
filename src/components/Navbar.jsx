@@ -66,7 +66,7 @@ function Navbar() {
           <NavLink to="/" end onClick={goHome}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/portfolio">Portfolio</NavLink>
+          <NavLink to="/portfolio">Projects</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
