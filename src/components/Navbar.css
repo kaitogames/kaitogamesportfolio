@@ -1,37 +1,96 @@
 .navbar {
   position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.8rem 2.2rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 2.5rem;
+  transition: height 0.4s ease, transform 0.45s ease;
   z-index: 100;
+}
+
+/* background layer that fades in smoothly */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.navbar.scrolled {
+  height: 62px;
+}
+
+.navbar.scrolled::before {
+  opacity: 1;
+}
+
+/* slides away when scrolling down, comes back when scrolling up */
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.nav-logo {
+  justify-self: start;
+  display: block;
+  line-height: 0;
+}
+
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: width 0.4s ease, height 0.4s ease, transform 0.2s ease;
+}
+
+.navbar.scrolled .nav-logo img {
+  width: 34px;
+  height: 34px;
+}
+
+.nav-logo:hover img {
+  transform: scale(1.08);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
 }
 
 .nav-links a {
-  color: var(--text);
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  transition: color 0.25s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--highlight);
+  color: #ffffff;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .navbar {
-    padding: 0.7rem 1.4rem;
+    height: 64px;
+    padding: 0 1rem;
+  }
+
+  .navbar.scrolled {
+    height: 56px;
   }
 
   .nav-links {
@@ -39,6 +98,16 @@
   }
 
   .nav-links a {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-logo img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar.scrolled .nav-logo img {
+    width: 30px;
+    height: 30px;
   }
 }

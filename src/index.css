@@ -44,3 +44,12 @@ section {
   --accent: #ffffff;
   --highlight: #ff7a00;
 }
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+}
