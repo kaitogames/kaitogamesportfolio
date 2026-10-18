@@ -1,11 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
   --bg: #000000;
   --surface: #0d0d0d;
-  --border: #222222;
+  --border: #262626;
   --text: #f5f5f5;
-  --muted: #8a8a8a;
-  --highlight: #ff7a00;
-  --font-display: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --muted: #999999;
+  --highlight: #fcaf17;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -17,14 +22,30 @@
 html {
   scroll-behavior: smooth;
   scrollbar-color: #fcaf17 #000000;
-  scrollbar-width: auto;
+  scrollbar-width: thin;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -32,29 +53,59 @@ a {
   text-decoration: none;
 }
 
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-body);
+}
+
+p {
+  line-height: 1.7;
+}
+
 section {
-  padding: 6rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 6rem 2rem;
 }
 
-/* background image behind the home page */
-.page-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("./assets/hero.png") center / cover no-repeat;
-  /* if your image is the screenshot, use this line instead:
-     url("./assets/Screenshot (12).png") center / cover no-repeat; */
-}
-
-.content {
-  position: relative;
-}
-
-/* keeps the footer at the bottom of short pages */
 .app {
   min-height: 100vh;
   display: flex;
@@ -65,7 +116,97 @@ section {
   flex: 1;
 }
 
-/* scrollbar: black track, yellow thumb */
+.content {
+  position: relative;
+}
+
+/* Background image behind the home page */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url('./assets/hero.png') center / cover no-repeat;
+}
+
+/* Portfolio, project and contact page spacing */
+.portfolio-page,
+.project-page,
+.contact-page {
+  padding-top: 8rem;
+}
+
+/* Projects page layout */
+section.portfolio-page {
+  max-width: none;
+  width: 100%;
+  padding: 8rem clamp(1rem, 5vw, 6rem) 4rem;
+}
+
+/* Projects page typography */
+.portfolio-page h1,
+.portfolio-page h2,
+.portfolio-page h3,
+.portfolio-page .rail-small,
+.page-heading,
+.project-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Contact page typography */
+.contact-page {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.contact-page h1,
+.contact-page h2,
+.contact-page h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact-page p,
+.contact-page a,
+.contact-page button {
+  font-family: var(--font-body);
+}
+
+.contact-email-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.contact-email {
+  color: var(--highlight);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  transition: opacity 0.2s ease;
+}
+
+.contact-email:hover {
+  opacity: 0.75;
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--highlight);
+  color: #000000;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -81,4 +222,29 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ffc54d;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  section.portfolio-page {
+    padding: 7rem 1.25rem 3rem;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .portfolio-page,
+  .project-page,
+  .contact-page {
+    padding-top: 7rem;
+  }
 }

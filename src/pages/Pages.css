@@ -12,12 +12,12 @@ section.portfolio-page {
   padding: 8rem clamp(1rem, 5vw, 6rem) 4rem;
 }
 
-/* Rockstar-style headings and card titles, Projects page only */
+/* Rockstar-style headings and card titles */
 .portfolio-page h1,
 .portfolio-page h2,
 .portfolio-page h3,
 .portfolio-page .rail-small {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-display);
   font-weight: 500;
   text-transform: none;
   letter-spacing: -0.04em;
@@ -41,6 +41,7 @@ section.portfolio-page {
 }
 
 .page-heading {
+  font-family: var(--font-display);
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.6rem);
   color: var(--highlight);
@@ -71,10 +72,12 @@ section.portfolio-page {
 }
 
 .project-title {
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .project-tagline {
+  font-family: var(--font-body);
   color: var(--muted);
   margin: 0.4rem 0 2rem;
 }
@@ -89,6 +92,7 @@ section.portfolio-page {
 }
 
 .project-description {
+  font-family: var(--font-body);
   max-width: 700px;
   margin-bottom: 2rem;
 }
@@ -96,17 +100,23 @@ section.portfolio-page {
 /* Contact page */
 .contact-page {
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
 }
 
-/* Contact page headings and text: normal weight */
+/* Contact page headings */
 .contact-page h1,
 .contact-page h2,
-.contact-page h3,
+.contact-page h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+/* Contact page body text and controls */
 .contact-page p,
 .contact-page a,
 .contact-page button {
+  font-family: var(--font-body);
   font-weight: 400;
 }
 
@@ -119,11 +129,12 @@ section.portfolio-page {
 }
 
 .contact-email-text {
-  font-family: inherit;
+  font-family: var(--font-body);
   font-weight: 400;
 }
 
 .contact-email {
+  font-family: var(--font-body);
   color: #fcaf17;
   font-size: 1.2rem;
   font-weight: 400;
