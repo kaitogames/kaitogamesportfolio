@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #000000;
@@ -9,10 +9,11 @@
   --muted: #999999;
   --highlight: #fcaf17;
 
-  --font-display: 'Barlow Condensed', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -33,26 +34,56 @@ body {
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Headings: Inter, medium weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+/* Links and controls */
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
 input,
 textarea,
 select {
-  font: inherit;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: inherit;
 }
 
-button,
-a {
+button {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+/* Images and media */
 img,
 video {
   max-width: 100%;
@@ -62,50 +93,31 @@ img {
   display: block;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: clamp(3rem, 7vw, 6.5rem);
-}
-
-h2 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-}
-
-h3 {
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-}
-
+/* Body text */
 p,
 li,
-label,
-input,
-textarea,
-select,
-button {
+label {
   font-family: var(--font-body);
+  font-weight: 400;
 }
 
 p {
   line-height: 1.7;
 }
 
+::selection {
+  background: var(--highlight);
+  color: #000000;
+}
+
+/* General sections */
 section {
   max-width: 1000px;
   margin: 0 auto;
   padding: 6rem 2rem;
 }
 
+/* Application layout */
 .app {
   min-height: 100vh;
   display: flex;
@@ -120,7 +132,7 @@ section {
   position: relative;
 }
 
-/* Background image behind the home page */
+/* Home page background */
 .page-bg {
   position: fixed;
   inset: 0;
@@ -133,7 +145,7 @@ section {
     url('./assets/hero.png') center / cover no-repeat;
 }
 
-/* Portfolio, project and contact page spacing */
+/* Page spacing */
 .portfolio-page,
 .project-page,
 .contact-page {
@@ -147,21 +159,102 @@ section.portfolio-page {
   padding: 8rem clamp(1rem, 5vw, 6rem) 4rem;
 }
 
-/* Projects page typography */
+/* Projects page headings */
 .portfolio-page h1,
 .portfolio-page h2,
 .portfolio-page h3,
-.portfolio-page .rail-small,
-.page-heading,
-.project-title {
+.portfolio-page .rail-small {
   font-family: var(--font-display);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-transform: none;
 }
 
-/* Contact page typography */
+.portfolio-page h1 {
+  font-size: 2.2rem;
+}
+
+.portfolio-page h2 {
+  font-size: 1.5rem;
+}
+
+.portfolio-page h3 {
+  font-size: 1.2rem;
+}
+
+.portfolio-page .rail-small {
+  letter-spacing: -0.02em;
+}
+
+/* Page headings */
+.page-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--highlight);
+  margin-bottom: 1rem;
+}
+
+.portfolio-page .page-heading {
+  text-align: left;
+  color: #ffffff;
+}
+
+.contact-page .page-heading {
+  color: var(--highlight);
+}
+
+/* ONLY project names are bold */
+.project-title,
+.portfolio-page .project-title,
+.portfolio-page .project-card-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Individual project page */
+.back-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--highlight);
+}
+
+.project-tagline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--muted);
+  margin: 0.4rem 0 2rem;
+}
+
+.project-hero-image {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  display: block;
+  background: #141414;
+}
+
+.project-description {
+  font-family: var(--font-body);
+  font-weight: 400;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+/* Contact page */
 .contact-page {
   text-align: center;
   font-family: var(--font-body);
@@ -172,14 +265,22 @@ section.portfolio-page {
 .contact-page h2,
 .contact-page h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .contact-page p,
 .contact-page a,
 .contact-page button {
   font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2.5rem 0 3.5rem;
 }
 
 .contact-email-text {
@@ -188,22 +289,16 @@ section.portfolio-page {
 }
 
 .contact-email {
-  color: var(--highlight);
   font-family: var(--font-body);
+  color: var(--highlight);
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   overflow-wrap: anywhere;
   transition: opacity 0.2s ease;
 }
 
 .contact-email:hover {
-  opacity: 0.75;
-}
-
-/* Selection highlight */
-::selection {
-  background: var(--highlight);
-  color: #000000;
+  opacity: 0.8;
 }
 
 /* Scrollbar */
@@ -224,7 +319,7 @@ section.portfolio-page {
   background: #ffc54d;
 }
 
-/* Mobile adjustments */
+/* Responsive layout */
 @media (max-width: 768px) {
   section {
     padding: 4rem 1.25rem;
@@ -235,11 +330,11 @@ section.portfolio-page {
   }
 
   h1 {
-    font-size: clamp(2.8rem, 12vw, 4.5rem);
+    font-size: clamp(2.5rem, 11vw, 4.5rem);
   }
 
   h2 {
-    font-size: clamp(2rem, 9vw, 3rem);
+    font-size: clamp(1.9rem, 8vw, 3rem);
   }
 
   .portfolio-page,
