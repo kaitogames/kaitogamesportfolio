@@ -4,7 +4,8 @@
   --border: #222222;
   --text: #f5f5f5;
   --muted: #8a8a8a;
-  --accent: #ffffff;
+  --highlight: #ff7a00;
+  --font-display: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 * {
@@ -15,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #fcaf17 #000000;
+  scrollbar-width: auto;
 }
 
 body {
@@ -35,15 +38,23 @@ section {
   margin: 0 auto;
 }
 
-:root {
-  --bg: #000000;
-  --surface: #0d0d0d;
-  --border: #222222;
-  --text: #f5f5f5;
-  --muted: #8a8a8a;
-  --accent: #ffffff;
-  --highlight: #ff7a00;
+/* background image behind the home page */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("./assets/hero.png") center / cover no-repeat;
+  /* if your image is the screenshot, use this line instead:
+     url("./assets/Screenshot (12).png") center / cover no-repeat; */
 }
+
+.content {
+  position: relative;
+}
+
+/* keeps the footer at the bottom of short pages */
 .app {
   min-height: 100vh;
   display: flex;
@@ -54,12 +65,7 @@ section {
   flex: 1;
 }
 
-/* scrollbar: black track, Rockstar-style yellow thumb */
-html {
-  scrollbar-color: #fcaf17 #000000;
-  scrollbar-width: auto;
-}
-
+/* scrollbar: black track, yellow thumb */
 ::-webkit-scrollbar {
   width: 10px;
 }

@@ -4,6 +4,41 @@
   padding-top: 8rem;
 }
 
+/* Projects page: full width with equal margins on both sides */
+section.portfolio-page {
+  max-width: none;
+  width: 100%;
+  padding: 8rem clamp(1rem, 5vw, 6rem) 4rem;
+}
+
+/* Rockstar-style headings and card titles, Projects page only */
+.portfolio-page h1,
+.portfolio-page h2,
+.portfolio-page h3,
+.portfolio-page .rail-small {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.portfolio-page h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+}
+
+.portfolio-page h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.portfolio-page h3 {
+  font-size: 1.5rem;
+}
+
+.portfolio-page .rail-small {
+  letter-spacing: -0.03em;
+}
+
 .page-heading {
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.6rem);
@@ -17,22 +52,12 @@
   color: #ffffff;
 }
 
+/* Contact page heading: yellow */
 .contact-page .page-heading {
   color: #fcaf17;
 }
 
-.category-block {
-  margin-bottom: 3rem;
-}
-
-.category-heading {
-  text-align: left;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: #fcaf17;
-  margin: 2rem 0 1.5rem;
-}
-
-/* Project page */
+/* Single project page */
 .back-link {
   display: inline-block;
   color: var(--muted);
@@ -81,8 +106,11 @@
 }
 
 .contact-email-text {
+  max-width: 640px;
+  margin: 0 auto 1rem;
   color: var(--muted);
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
 .contact-email {
@@ -92,6 +120,7 @@
   word-break: break-all;
   transition: opacity 0.2s;
 }
+
 .contact-email:hover {
   opacity: 0.8;
 }

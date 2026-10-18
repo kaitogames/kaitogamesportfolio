@@ -1,0 +1,111 @@
+.rail-block {
+  margin-top: 3rem;
+}
+
+.rail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.rail-heading {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.rail-arrows {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.rail-arrows button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+
+.rail-arrows button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* the scrolling row: 3 cards plus a peek of the 4th */
+.rail {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-card {
+  flex: 0 0 calc((100% - 4.5rem) / 3.15);
+  scroll-snap-align: start;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #050505;
+  transition: border-color 0.25s;
+}
+
+.rail-card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.rail-image-wrap {
+  overflow: hidden;
+}
+
+.rail-image {
+  aspect-ratio: 16 / 9;
+  background-color: #141414;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.rail-card:hover .rail-image {
+  transform: scale(1.04);
+}
+
+.rail-info {
+  padding: 1.5rem 1.7rem 1.8rem;
+}
+
+.rail-small {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rail-title {
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .rail-card {
+    flex: 0 0 calc((100% - 1.5rem) / 1.6);
+  }
+}
+
+@media (max-width: 600px) {
+  .rail-card {
+    flex: 0 0 82%;
+  }
+}
