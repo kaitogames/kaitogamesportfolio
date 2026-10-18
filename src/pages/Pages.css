@@ -1,3 +1,4 @@
+
 .portfolio-page,
 .project-page,
 .contact-page {
@@ -17,22 +18,22 @@ section.portfolio-page {
 .portfolio-page h3,
 .portfolio-page .rail-small {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: none;
   letter-spacing: -0.04em;
   line-height: 1.05;
 }
 
 .portfolio-page h1 {
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-size: 2.2rem;
 }
 
 .portfolio-page h2 {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: 1.5rem;
 }
 
 .portfolio-page h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .portfolio-page .rail-small {
@@ -95,6 +96,18 @@ section.portfolio-page {
 /* Contact page */
 .contact-page {
   text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Contact page headings and text: normal weight */
+.contact-page h1,
+.contact-page h2,
+.contact-page h3,
+.contact-page p,
+.contact-page a,
+.contact-page button {
+  font-weight: 400;
 }
 
 .contact-buttons {
@@ -106,17 +119,14 @@ section.portfolio-page {
 }
 
 .contact-email-text {
-  max-width: 640px;
-  margin: 0 auto 1rem;
-  color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-family: inherit;
+  font-weight: 400;
 }
 
 .contact-email {
   color: #fcaf17;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   word-break: break-all;
   transition: opacity 0.2s;
 }
