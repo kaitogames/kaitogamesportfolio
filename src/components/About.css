@@ -66,7 +66,7 @@
 }
 
 .hl {
-  color: var(--highlight);
+  color: #fcaf17;
 }
 
 .about-list {
@@ -83,13 +83,13 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.8rem 1.6rem;
-  border: 1px solid var(--highlight);
+  border: 1px solid #fcaf17;
   border-radius: 999px;
   transition: background 0.2s, color 0.2s;
 }
 
 .about-btn:hover {
-  background: var(--highlight);
+  background: #fcaf17;
   color: #000;
 }
 

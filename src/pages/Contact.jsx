@@ -28,7 +28,12 @@ function Contact() {
       <p className="contact-email-text">
         If you want to email me, feel free to reach out at
       </p>
-      <a href="mailto:kaitogames789@gmail.com" className="contact-email">
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=kaitogames789@gmail.com"
+        className="contact-email"
+        target="_blank"
+        rel="noreferrer"
+      >
         kaitogames789@gmail.com
       </a>
     </section>

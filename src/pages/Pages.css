@@ -17,14 +17,18 @@
   color: #ffffff;
 }
 
+.contact-page .page-heading {
+  color: #fcaf17;
+}
+
 .category-block {
   margin-bottom: 3rem;
 }
 
 .category-heading {
-  text-align: center;
+  text-align: left;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: var(--highlight);
+  color: #fcaf17;
   margin: 2rem 0 1.5rem;
 }
 
@@ -82,7 +86,7 @@
 }
 
 .contact-email {
-  color: var(--highlight);
+  color: #fcaf17;
   font-size: 1.2rem;
   font-weight: 600;
   word-break: break-all;
