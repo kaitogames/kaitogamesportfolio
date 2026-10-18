@@ -92,7 +92,6 @@
   word-break: break-all;
   transition: opacity 0.2s;
 }
-
 .contact-email:hover {
   opacity: 0.8;
 }

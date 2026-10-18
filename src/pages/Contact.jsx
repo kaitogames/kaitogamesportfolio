@@ -23,11 +23,26 @@ function Contact() {
         >
           itch.io <span>→</span>
         </a>
+
+        <a
+          href="https://x.com/your-username"
+          className="about-btn"
+          target="_blank"
+          rel="noreferrer"
+        >
+          X <span>→</span>
+        </a>
       </div>
 
       <p className="contact-email-text">
-        If you want to email me, feel free to reach out at
+        If you want to contact me about a collaboration, feedback on my games,
+        or any other idea you have in mind, feel free to write to me.
       </p>
+      <p className="contact-email-text">
+        You can also follow my work on the links above. Send me an email and
+        I'll get back to you as soon as I can.
+      </p>
+
       <a
         href="https://mail.google.com/mail/?view=cm&fs=1&to=kaitogames789@gmail.com"
         className="contact-email"
