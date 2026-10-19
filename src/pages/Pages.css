@@ -11,6 +11,12 @@
   margin-bottom: 1rem;
 }
 
+/* Projects page heading: left-aligned and white */
+.portfolio-page .page-heading {
+  text-align: left;
+  color: #ffffff;
+}
+
 .category-block {
   margin-bottom: 3rem;
 }
