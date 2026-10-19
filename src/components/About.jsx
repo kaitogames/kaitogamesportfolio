@@ -33,7 +33,7 @@ function About() {
           </ul>
 
           <a href="#portfolio" className="about-btn">
-            View Portfolio <span>→</span>
+            View Projects <span>→</span>
           </a>
         </div>
       </div>

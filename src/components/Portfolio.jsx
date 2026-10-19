@@ -21,7 +21,7 @@ function Portfolio() {
 
   return (
     <section id="portfolio" className="portfolio">
-      <h2 className="portfolio-heading">Projects</h2>
+      <h2 className="portfolio-heading"></h2>
 
       <div className="feature">
         <Link
