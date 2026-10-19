@@ -1,3 +1,4 @@
+
 /* ---------- heading ---------- */
 .portfolio-heading {
   text-align: left;
@@ -5,6 +6,7 @@
   color: #ffffff;
   margin-bottom: 1.5rem;
 }
+
 /* ---------- project cards (used on the Projects page) ---------- */
 .project-grid {
   display: grid;
@@ -69,12 +71,25 @@
   border-radius: 0;
 }
 
+/* Keep one project visible at a time */
+.feature-track {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .feature-slide {
   display: grid;
   grid-template-columns: 1fr 1.7fr;
   gap: 2.5rem;
   align-items: center;
-  animation: featureFade 0.5s ease;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  animation: featureFade 0.5s ease both;
 }
 
 @keyframes featureFade {
@@ -82,10 +97,47 @@
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.feature-slide.slide-next {
+  animation-name: featureEnterRight;
+}
+
+.feature-slide.slide-prev {
+  animation-name: featureEnterLeft;
+}
+
+@keyframes featureEnterRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes featureEnterLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-text {
+  min-width: 0;
 }
 
 .feature-title {
@@ -102,11 +154,13 @@
 }
 
 .feature-image-wrap {
+  min-width: 0;
   overflow: hidden;
   border-radius: 8px;
 }
 
 .feature-image {
+  width: 100%;
   aspect-ratio: 16 / 10;
   background-color: #141414;
   background-size: cover;
@@ -118,7 +172,7 @@
   transform: scale(1.04);
 }
 
-/* bottom row: lines up with the image column */
+/* ---------- bottom row: aligns with the image column ---------- */
 .feature-bar {
   display: grid;
   grid-template-columns: 1fr 1.7fr;
@@ -131,6 +185,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
 }
 
 .feature-controls {
@@ -145,6 +200,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
+  padding: 0;
   border: none;
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
@@ -157,8 +213,14 @@
   color: #fff;
 }
 
+.feature-controls > button svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .feature-dots {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -184,6 +246,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
   transition: color 0.25s;
 }
 
@@ -191,12 +254,17 @@
   color: #fff;
 }
 
+/* ---------- responsive layout ---------- */
 @media (max-width: 800px) {
   .feature {
     padding: 1.4rem;
   }
 
-  .feature-slide,
+  .feature-slide {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .feature-bar {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -204,5 +272,15 @@
 
   .feature-bar-inner {
     grid-column: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-controls {
+    gap: 0.75rem;
+  }
+
+  .feature-bar-inner {
+    gap: 1rem;
   }
 }
