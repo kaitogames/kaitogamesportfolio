@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Portfolio.css";
 import { projects } from "../data/projects";
@@ -19,7 +19,26 @@ function Portfolio() {
   const [direction, setDirection] = useState(1);
   const [slideKey, setSlideKey] = useState(0);
 
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
   const total = featured.length;
+
+  const changeProject = (nextIndex, moveDirection) => {
+    if (nextIndex === index || total <= 1) return;
+
+    setDirection(moveDirection);
+    setIndex(nextIndex);
+    setSlideKey((key) => key + 1);
+  };
+
+  const prev = () => {
+    changeProject((index - 1 + total) % total, -1);
+  };
+
+  const next = () => {
+    changeProject((index + 1) % total, 1);
+  };
 
   useEffect(() => {
     if (total <= 1) return;
@@ -33,32 +52,42 @@ function Portfolio() {
     return () => clearInterval(timer);
   }, [index, total]);
 
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+    touchStartY.current = event.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (event) => {
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+
+    const deltaX = endX - touchStartX.current;
+    const deltaY = endY - touchStartY.current;
+
+    // Ignore vertical scrolling and short movements.
+    if (Math.abs(deltaX) < 45 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      next();
+    } else {
+      prev();
+    }
+  };
+
   if (total === 0) return null;
-
-  const changeProject = (nextIndex, moveDirection) => {
-    if (nextIndex === index) return;
-
-    setDirection(moveDirection);
-    setIndex(nextIndex);
-    setSlideKey((key) => key + 1);
-  };
-
-  const prev = () => {
-    const nextIndex = (index - 1 + total) % total;
-    changeProject(nextIndex, -1);
-  };
-
-  const next = () => {
-    const nextIndex = (index + 1) % total;
-    changeProject(nextIndex, 1);
-  };
 
   const current = featured[index];
 
   return (
     <section id="portfolio" className="portfolio">
       <div className="feature">
-        <div className="feature-track">
+        <div
+          className="feature-track"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <Link
             to={`/projects/${current.slug}`}
             className={`feature-slide ${
