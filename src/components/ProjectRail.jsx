@@ -20,10 +20,27 @@ function ProjectRail({ title, items }) {
     return () => window.removeEventListener("resize", update);
   }, [items]);
 
-  const scrollRail = (dir) => {
-    const el = railRef.current;
-    el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
-  };
+ 
+
+
+const scrollRail = (dir) => {
+  const el = railRef.current;
+  if (!el) return;
+
+  const card = el.querySelector(".rail-card");
+  if (!card) return;
+
+  const cardWidth = card.getBoundingClientRect().width;
+  const styles = window.getComputedStyle(el);
+  const gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
+
+  el.scrollBy({
+    left: dir * (cardWidth + gap),
+    behavior: "smooth",
+  });
+};
+
+
 
   return (
     <div className="rail-block">
