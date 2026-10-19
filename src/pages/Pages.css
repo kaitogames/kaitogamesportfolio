@@ -1,65 +1,28 @@
-
 .portfolio-page,
 .project-page,
 .contact-page {
   padding-top: 8rem;
 }
 
-/* Projects page: full width with equal margins on both sides */
-section.portfolio-page {
-  max-width: none;
-  width: 100%;
-  padding: 8rem clamp(1rem, 5vw, 6rem) 4rem;
-}
-
-/* Rockstar-style headings and card titles */
-.portfolio-page h1,
-.portfolio-page h2,
-.portfolio-page h3,
-.portfolio-page .rail-small {
-  font-family: var(--font-display);
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-}
-
-.portfolio-page h1 {
-  font-size: 2.2rem;
-}
-
-.portfolio-page h2 {
-  font-size: 1.5rem;
-}
-
-.portfolio-page h3 {
-  font-size: 1.2rem;
-}
-
-.portfolio-page .rail-small {
-  letter-spacing: -0.03em;
-}
-
 .page-heading {
-  font-family: var(--font-display);
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.6rem);
   color: var(--highlight);
   margin-bottom: 1rem;
 }
 
-/* Projects page heading: left-aligned and white */
-.portfolio-page .page-heading {
-  text-align: left;
-  color: #ffffff;
+.category-block {
+  margin-bottom: 3rem;
 }
 
-/* Contact page heading: yellow */
-.contact-page .page-heading {
-  color: #fcaf17;
+.category-heading {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--highlight);
+  margin: 2rem 0 1.5rem;
 }
 
-/* Single project page */
+/* Project page */
 .back-link {
   display: inline-block;
   color: var(--muted);
@@ -72,12 +35,10 @@ section.portfolio-page {
 }
 
 .project-title {
-  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .project-tagline {
-  font-family: var(--font-body);
   color: var(--muted);
   margin: 0.4rem 0 2rem;
 }
@@ -92,7 +53,6 @@ section.portfolio-page {
 }
 
 .project-description {
-  font-family: var(--font-body);
   max-width: 700px;
   margin-bottom: 2rem;
 }
@@ -100,24 +60,6 @@ section.portfolio-page {
 /* Contact page */
 .contact-page {
   text-align: center;
-  font-family: var(--font-body);
-  font-weight: 400;
-}
-
-/* Contact page headings */
-.contact-page h1,
-.contact-page h2,
-.contact-page h3 {
-  font-family: var(--font-display);
-  font-weight: 500;
-}
-
-/* Contact page body text and controls */
-.contact-page p,
-.contact-page a,
-.contact-page button {
-  font-family: var(--font-body);
-  font-weight: 400;
 }
 
 .contact-buttons {
@@ -129,15 +71,14 @@ section.portfolio-page {
 }
 
 .contact-email-text {
-  font-family: var(--font-body);
-  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
 }
 
 .contact-email {
-  font-family: var(--font-body);
-  color: #fcaf17;
+  color: var(--highlight);
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   word-break: break-all;
   transition: opacity 0.2s;
 }

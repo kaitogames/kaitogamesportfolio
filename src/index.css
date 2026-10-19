@@ -319,14 +319,17 @@ section.portfolio-page {
   background: #ffc54d;
 }
 
-/* Games and Programming headings */
+/* Games and Programming headings — match Home page Projects */
 .games-heading,
 .programming-heading {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  text-align: left;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-family: var(--font-body);
+  letter-spacing: normal;
+  line-height: normal;
 }
 
 /* Responsive layout */
@@ -360,12 +363,17 @@ section.portfolio-page {
   
 /* Games and Programming headings */
 /* Games and Programming headings — match Projects */
+/* Games and Programming headings — styled like Projects */
 .games-heading,
 .programming-heading {
   text-align: left;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   color: #ffffff;
   margin-bottom: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: normal;
 }
 
 }
