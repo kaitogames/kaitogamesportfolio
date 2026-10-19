@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 import "./About.css";
 import profile from "../assets/profile.jpg";
 
@@ -21,8 +23,8 @@ function About() {
 
           <p className="about-text">
             I've worked on small games and gameplay prototypes, learning about game mechanics,
-             player interaction, and bringing ideas to life through code. I'm always looking to improve my
-              skills and build more ambitious projects.
+            player interaction, and bringing ideas to life through code. I'm always looking to improve my
+            skills and build more ambitious projects.
           </p>
 
           <p className="about-text">Things I've worked on:</p>
@@ -32,9 +34,9 @@ function About() {
             <li>A Complete Game Where You Prepare Food And Deliver</li>
           </ul>
 
-          <a href="#portfolio" className="about-btn">
+          <Link to="/portfolio" className="about-btn">
             View Projects <span>→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
