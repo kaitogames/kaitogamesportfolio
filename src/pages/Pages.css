@@ -65,7 +65,7 @@
 
 /* Contact page */
 .contact-page {
-  text-align: center;
+  text-align: left;
 }
 
 .contact-buttons {
@@ -77,12 +77,12 @@
 }
 
 .contact-email-text {
-  color: var(--muted);
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .contact-email {
-  color: var(--highlight);
+  color: #fcaf17;
   font-size: 1.2rem;
   font-weight: 600;
   word-break: break-all;
