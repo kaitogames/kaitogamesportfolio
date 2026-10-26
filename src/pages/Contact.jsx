@@ -5,6 +5,12 @@ function Contact() {
     <section className="contact-page">
       <h1 className="page-heading">Contact</h1>
 
+      <p className="contact-email-text">
+        I'm always open to hearing from fellow developers, designers, and
+        players. Whether you have a question, an idea, or just want to talk
+        about games, feel free to reach out.
+      </p>
+
       <div className="contact-buttons">
         <a
           href="https://github.com/kaitogames"
@@ -35,12 +41,15 @@ function Contact() {
       </div>
 
       <p className="contact-email-text">
-        If you want to contact me about a collaboration, feedback on my games,
-        or any other idea you have in mind, feel free to write to me.
+        You can reach me about collaborations, game jams, prototypes, feedback
+        on my games, or any project you'd like to build together. Feedback from
+        players is especially welcome, since it helps me improve every release.
       </p>
+
       <p className="contact-email-text">
-        You can also follow my work on the links above. Send me an email and
-        I'll get back to you as soon as I can.
+        My latest games and updates are available through the links above. For
+        anything else, send me an email with a few details about what you have
+        in mind, and I'll get back to you as soon as I can.
       </p>
 
       <a
