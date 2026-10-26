@@ -17,7 +17,7 @@ export const projects = [
   },
 
   {
-    slug: "project-one",
+    slug: "project-two",
     title: "Grand Theft Auto 4",
     tagline: "Welcome to Liberty City",
     category: "Games",
@@ -26,7 +26,7 @@ export const projects = [
     link: "",
   },
   {
-    slug: "project-one",
+    slug: "project-three",
     title: "Red Dead Redemption 2",
     tagline: "Expreience the 60s life",
     category: "Games",
