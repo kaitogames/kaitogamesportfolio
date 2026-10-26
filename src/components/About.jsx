@@ -1,44 +1,41 @@
-
 import { Link } from "react-router-dom";
 import "./About.css";
-import profile from "../assets/profile.jpg";
+import logo from "../assets/profile.jpg"; // swap with your logo file if you have one
 
 function About() {
   return (
     <section id="about" className="about">
-      <div className="about-card">
-        <div className="about-left">
-          <img src={profile} alt="Abdul Mannan Ali" className="about-image" />
-        </div>
+      <img src={logo} alt="Kaito Game Dev logo" className="about-logo" />
 
-        <div className="about-right">
-          <h2 className="about-name">Abdul Mannan Ali</h2>
-          <p className="about-aka">aka Kaito Game Dev</p>
+      <h2 className="about-title">
+        Hi, I'm <span className="hl">Abdul Mannan Ali</span>.
+        <br />
+        I make games.
+      </h2>
 
-          <p className="about-text">
-            I'm a <span className="hl">Game Developer</span> who builds games
-            with <span className="hl">Unity</span> and{" "}
-            <span className="hl">C#</span>. I'm currently developing my programming skills and exploring game design.
-          </p>
+      <p className="about-text">
+        I'm a <span className="hl">Game Developer</span> who builds games with{" "}
+        <span className="hl">Unity</span> and <span className="hl">C#</span>.
+        I'm currently developing my programming skills and exploring game
+        design.
+      </p>
 
-          <p className="about-text">
-            I've worked on small games and gameplay prototypes, learning about game mechanics,
-            player interaction, and bringing ideas to life through code. I'm always looking to improve my
-            skills and build more ambitious projects.
-          </p>
+      <p className="about-text">
+        I've worked on small games and gameplay prototypes, learning about game
+        mechanics, player interaction, and bringing ideas to life through code.
+        I'm always looking to improve my skills and build more ambitious
+        projects.
+      </p>
 
-          <p className="about-text">Things I've worked on:</p>
-          <ul className="about-list">
-            <li>Flappy Bird Inspired Game</li>
-            <li>A Simple Cube Runner</li>
-            <li>A Complete Game Where You Prepare Food And Deliver</li>
-          </ul>
-
-          <Link to="/portfolio" className="about-btn">
-            View Projects <span>→</span>
-          </Link>
-        </div>
+      <div className="about-tags">
+        <span>C#</span>
+        <span>Unity</span>
+        <span>Game Design</span>
       </div>
+
+      <Link to="/portfolio" className="about-btn">
+        View Projects →
+      </Link>
     </section>
   );
 }
