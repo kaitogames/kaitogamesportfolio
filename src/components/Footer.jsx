@@ -35,9 +35,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-left">
-        <p className="footer-name">kaitogames</p>
+        <p className="footer-name">oncecrow games</p>
         <p className="footer-copy">
-          © {new Date().getFullYear()} kaitogames. All rights reserved.
+          © {new Date().getFullYear()} oncecrow games. All rights reserved.
         </p>
       </div>
 
