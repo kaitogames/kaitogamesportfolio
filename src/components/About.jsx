@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./About.css";
-import logo from "../assets/profile.jpg"; // swap with your logo file if you have one
+import logo from "../assets/profile.png"; // swap with your logo file if you have one
 
 function About() {
   return (

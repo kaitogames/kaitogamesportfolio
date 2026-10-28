@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.png";
 
 // pixels of continuous downward scrolling before the bar hides
 // (one mouse-wheel click is about 100px, so 300 is about 3 scrolls)
